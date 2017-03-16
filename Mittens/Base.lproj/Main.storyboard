@@ -1,14 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5hH-mN-7eM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Google Log InVC-->
+        <scene sceneID="TGW-g4-XLf">
+            <objects>
+                <viewController storyboardIdentifier="googleLogIn" id="5hH-mN-7eM" customClass="GoogleLogInVC" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ec5-mN-uRj"/>
+                        <viewControllerLayoutGuide type="bottom" id="0gE-Cj-hKy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aac-EH-kPA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuR-dp-riA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1974" y="-86"/>
+        </scene>
+        <!--Chat View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ChatViewController" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +41,258 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vaZ-w4-qah"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3030" y="-170"/>
+        </scene>
+        <!--Create Chat View Controller-->
+        <scene sceneID="twy-Ut-OSu">
+            <objects>
+                <viewController id="Iji-fa-1ts" customClass="CreateChatViewController" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wai-vo-RTC"/>
+                        <viewControllerLayoutGuide type="bottom" id="YfR-TR-Qw4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I0r-8z-SnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7k-4b-KnI">
+                                <rect key="frame" x="227" y="72" width="132" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="O7N-It-fFX"/>
+                                </constraints>
+                                <state key="normal" title="NEW CHAT"/>
+                                <connections>
+                                    <action selector="CreateNewChatButton:" destination="Iji-fa-1ts" eventType="touchUpInside" id="FUC-hU-fj0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search or Create your personal chat here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2w-xt-XUa">
+                                <rect key="frame" x="16" y="72" width="203" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrs-rm-JBx">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qfn-99-8vG" detailTextLabel="iQl-z0-Rmu" rowHeight="57" style="IBUITableViewCellStyleSubtitle" id="ca3-rA-Ugg">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ca3-rA-Ugg" id="npR-5C-goa">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qfn-99-8vG">
+                                                    <rect key="frame" x="15" y="10" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQl-z0-Rmu">
+                                                    <rect key="frame" x="15" y="31" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rrs-rm-JBx" firstAttribute="top" secondItem="e2w-xt-XUa" secondAttribute="bottom" constant="8" symbolic="YES" id="HbS-wy-8OZ"/>
+                            <constraint firstItem="w7k-4b-KnI" firstAttribute="leading" secondItem="e2w-xt-XUa" secondAttribute="trailing" constant="8" symbolic="YES" id="HgQ-CB-mUV"/>
+                            <constraint firstItem="e2w-xt-XUa" firstAttribute="top" secondItem="w7k-4b-KnI" secondAttribute="top" id="Jr0-t1-jRc"/>
+                            <constraint firstItem="e2w-xt-XUa" firstAttribute="top" secondItem="Wai-vo-RTC" secondAttribute="bottom" constant="8" symbolic="YES" id="M9f-EV-Qjp"/>
+                            <constraint firstAttribute="trailing" secondItem="rrs-rm-JBx" secondAttribute="trailing" id="OcM-O8-M9V"/>
+                            <constraint firstItem="e2w-xt-XUa" firstAttribute="leading" secondItem="I0r-8z-SnZ" secondAttribute="leadingMargin" id="TA6-ke-hgC"/>
+                            <constraint firstItem="w7k-4b-KnI" firstAttribute="trailing" secondItem="I0r-8z-SnZ" secondAttribute="trailingMargin" id="i9s-he-3dH"/>
+                            <constraint firstItem="rrs-rm-JBx" firstAttribute="bottom" secondItem="YfR-TR-Qw4" secondAttribute="top" id="ojd-o2-bwf"/>
+                            <constraint firstItem="rrs-rm-JBx" firstAttribute="leading" secondItem="I0r-8z-SnZ" secondAttribute="leading" id="rJg-dU-92c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nyD-b2-FG6"/>
+                    <connections>
+                        <outlet property="hashtagTextLabel" destination="e2w-xt-XUa" id="UkU-hH-Naf"/>
+                        <outlet property="tableView" destination="rrs-rm-JBx" id="psO-gO-U2N"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="chat" id="MwK-X5-fyo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcL-qg-ca7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="-161"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fRT-j1-RGL">
+            <objects>
+                <tabBarController storyboardIdentifier="tabbar" id="yYc-1j-sYn" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="vBY-ZE-qdh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cGg-Ro-t5l" kind="relationship" relationship="viewControllers" id="Vd1-Gi-u2E"/>
+                        <segue destination="ReK-cg-xXp" kind="relationship" relationship="viewControllers" id="Lmn-mf-wb7"/>
+                        <segue destination="xIO-rZ-fpQ" kind="relationship" relationship="viewControllers" id="wSx-Ih-5Fh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soL-32-cGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1249" y="-143"/>
+        </scene>
+        <!--My Profile View Controller-->
+        <scene sceneID="5dy-sY-Bwj">
+            <objects>
+                <viewController id="e6V-Z5-Elr" customClass="MyProfileViewController" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HmD-jG-Jiq"/>
+                        <viewControllerLayoutGuide type="bottom" id="FCC-hI-4AH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="udT-9I-kzD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7P-O0-YfM">
+                                <rect key="frame" x="67" y="106" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GR5-4m-jgI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peK-kW-XBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352.8000000000002" y="790.25487256371821"/>
+        </scene>
+        <!--chats-->
+        <scene sceneID="GYT-s3-EFI">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="Iyn-LT-OgI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="chats" image="chat_icon" id="bxu-Ld-OQc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jMu-BQ-QGz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Iji-fa-1ts" kind="relationship" relationship="rootViewController" id="v1a-Sq-Vjm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esU-KR-vMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="-161"/>
+        </scene>
+        <!--All Chat Table View Controller-->
+        <scene sceneID="K2c-LT-dEz">
+            <objects>
+                <tableViewController id="WSH-72-Pp2" customClass="AllChatTableViewController" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RXE-yv-3BL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="WSH-72-Pp2" id="fif-rs-dMA"/>
+                            <outlet property="delegate" destination="WSH-72-Pp2" id="Qef-5X-7cU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="IFR-hS-iiO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGX-Sh-YfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="-958"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="AvS-Zd-C61">
+            <objects>
+                <viewController id="rWx-iT-GoY" customClass="HomeViewController" customModule="Mittens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eUZ-5E-IMx"/>
+                        <viewControllerLayoutGuide type="bottom" id="2XY-7D-UpV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qX5-zt-5U1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4J2-kI-Ak2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3B-9J-PTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-519" y="1878"/>
+        </scene>
+        <!--profile-->
+        <scene sceneID="leG-vu-aDd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xIO-rZ-fpQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="profile" image="profile_icon" id="YFT-Wv-2om"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yNd-Jm-LaR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e6V-Z5-Elr" kind="relationship" relationship="rootViewController" id="ha3-wm-fsi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4h-lx-MGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="789.35532233883066"/>
+        </scene>
+        <!--Chat dei corsi-->
+        <scene sceneID="yz7-S1-uvW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ReK-cg-xXp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat dei corsi" image="chat_icon" id="SLA-8j-Jql"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="T1h-cL-Xsl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WSH-72-Pp2" kind="relationship" relationship="rootViewController" id="1Ly-ad-rEz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIa-TH-rVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="-958"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HE7-T7-3m3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cGg-Ro-t5l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="UBO-4V-5PL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OeL-K7-U4S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rWx-iT-GoY" kind="relationship" relationship="rootViewController" id="qCa-It-Hkh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alh-rr-z7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1180" y="775.86206896551732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat_icon" width="33" height="22"/>
+        <image name="profile_icon" width="25" height="25"/>
+    </resources>
 </document>
